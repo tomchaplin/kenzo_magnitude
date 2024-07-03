@@ -9,7 +9,7 @@ So far I have been using `ecl` (Embeddable Common Lisp), for more information on
 
 #### Linux
 
-`ecl` is available in the package managers of most Linux distros, [see here] for the latest version available on your distro.
+`ecl` is available in the package managers of most Linux distros, [see here](https://repology.org/project/ecl/versions) for the latest version available on your distro.
 
 #### MacOS
 
