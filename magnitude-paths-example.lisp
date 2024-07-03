@@ -11,14 +11,16 @@
     '(4-circle)
   ))
 
-(setf dg1-string
-   " 0   1   2  3  1   2
-    inf  0   1  2 inf inf
-    inf inf  0  1 inf inf
-    inf inf inf 0 inf inf
-    inf inf inf 2  0   1
-    inf inf inf 1 inf  0")
+; Can input distance matrix as a vector
+(setf dg1-vector #(
+      0    1    2    3    1    2
+    :inf   0    1    2  :inf :inf
+    :inf :inf   0    1  :inf :inf
+    :inf :inf :inf   0  :inf :inf
+    :inf :inf :inf   2    0    1
+    :inf :inf :inf   1  :inf   0))
 
+; Or as a string (entries are split on spaces/newlines/commas)
 (setf dg2-string
   "0 1 2 2 1 
    inf 0 1 2 inf
@@ -32,9 +34,9 @@
     inf inf 0 1
     inf inf inf 0")
 
-(setf dg1-ss (matrix-string-to-ss dg1-string))
-(setf dg2-ss (matrix-string-to-ss dg2-string))
-(setf dg3-ss (matrix-string-to-ss dg3-string))
+(setf dg1-ss (matrix-vector-to-ss dg1-vector))
+(setf dg2-ss (matrix-vector-to-ss (matrix-string-to-vector dg2-string)))
+(setf dg3-ss (matrix-vector-to-ss (matrix-string-to-vector dg3-string)))
 
 (write-line "DG1")
 (loop for r in '(0 1 2 3 4) do 

@@ -249,16 +249,14 @@
 (defun matrix-string-to-func (matrix-string)
   (matrix-vector-to-func (matrix-string-to-vector matrix-string)))
 
-(defun matrix-string-to-flcc (matrix-string)
-  (let
-    ((matrix-vector (matrix-string-to-vector matrix-string)))
-    (magnitude-path-flcc
+(defun matrix-vector-to-flcc (matrix-vector)
+  (magnitude-path-flcc
       (matrix-vector-n-vertices matrix-vector)
       (matrix-vector-to-func matrix-vector)
-      (list 'matrix-string-to-flcc matrix-string)
-      )))
+      (list 'matrix-vector-to-flcc matrix-vector)
+      ))
 
-(defun matrix-string-to-ss (matrix-string)
+(defun matrix-vector-to-ss (matrix-vector)
   (build-ss
-    (matrix-string-to-flcc matrix-string)
-    (list 'matrix-string-to-ss matrix-string)))
+    (matrix-vector-to-flcc matrix-vector)
+    (list 'matrix-vector-to-ss matrix-vector)))
