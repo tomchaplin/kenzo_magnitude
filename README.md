@@ -4,7 +4,7 @@
 
 First, you need an implementation of the Common Lisp language.
 So far I have been using `ecl` (Embeddable Common Lisp), for more information on this see [here](https://ecl.common-lisp.dev/main.html).
-`ecl` is available in package manager of most linux distro or on MacOS via `homebrew`
+`ecl` is available in the package managers of most linux distros, or on MacOS via `homebrew`
 
 ```
 brew install ecl
@@ -22,7 +22,7 @@ ecl < compile.lisp
 popd
 ```
 
-Now we are ready to start computing the MPSS/
+Now we are ready to start computing the MPSS.
 
 ## Usage
 
